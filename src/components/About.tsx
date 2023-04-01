@@ -16,7 +16,8 @@ const SectionWrapper = styled.section`
 `;
 
 const ContentWrapper = styled.div`
-  width: 70%;
+  width: 60%;
+  max-width: calc(60%, 220px);
   min-width: 220px;
   padding: 30px;
   display:inline-flex;
