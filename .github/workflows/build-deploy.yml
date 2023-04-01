@@ -33,3 +33,5 @@ jobs:
         run: yarn build
       - name: Deploy
         run: aws s3 sync ./build s3://${{ secrets.S3_BUCKET_NAME }}
+      - name: Invalidate Cloudfront Cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CF_DISTRUBUTION_ID }} --paths "/*"
