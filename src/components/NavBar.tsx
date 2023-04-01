@@ -7,7 +7,7 @@ const NavBarWrapper = styled.div`
   top: 0px;
   background-color: grey;
   opacity: 50%;
-  height: 50px;
+  height: 40px;
   width: 100%;
   display:inline-flex;
   flex-direction: row;
@@ -20,13 +20,14 @@ const ButtonWrapper = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   color: white;
+  font-weight: 900;
   display:inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   &:hover {
-    font-weight: 900;
+    color: #b6ede8f0;
   }
 `
 

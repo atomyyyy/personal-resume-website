@@ -1,12 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
+import GithubIcon from './Icon/GithubIcon';
+import LinkedinIcon from './Icon/LinkedinIcon';
+import StackOverflowIcon from './Icon/StackOverflowIcon';
 import background from '../images/background.png';
 
 const SectionWrapper = styled.section`
-  width: 100vw;
-  height: calc(100vh + 50px);
-  margin-top: -50px; // offset navbar
+  height: 100vh;
+  margin-top: -40px; // offset navbar
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -29,35 +33,52 @@ const ContentWrapper = styled.div`
   backdrop-filter: blur(10px);
 `
 
-const Title = styled.div`
-  color: white;
-  font-size: 48px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-`
+const ContactSectionWrapper = styled.div`
+  display:inline-flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content:center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+`;
 
-const Description = styled.div`
+const StyledTitle = styled(Typography)`
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+`
+const StyledDescription = styled(Typography)`
   color: white;
   line-height: 1.6;
-  text-align: center;
-  font-size: 18px;
   padding: 5px;
+`
+
+const StyledButton = styled(Button)`
+  border-radius: 60%;
 `
 
 const About = () => (
   <SectionWrapper id='about'>
     <ContentWrapper>
-      <Title>
+      <StyledTitle align={'center'} variant='h4'>
         I am <b>Alan Yuen</b>.
-      </Title>
-      <Description>
-        I am a Canada-based <b>Backend Software Engineer</b>, <b>DevOps</b> and <b>Data Engineer</b>.
+      </StyledTitle>
+      <StyledDescription align={'center'} paragraph={true}>
+        I am a Hong Kong based <b>Backend Software Engineer</b>, <b>DevOps</b> and <b>Data Engineer</b>.
         Currently I am working in Accenture Technology helping to build highly available systems with mordern architecture.
-      </Description>
-      <Description>
+      </StyledDescription>
+      {/* <StyledDescription align={'center'} paragraph={true}>
         In my free time, I love playing badminton, riding and watching movies. I am also a Go (A traditional japanese boardgame, 
         as well as a program language!) enthusiastic, being a Go tutor previously before AI is given birth.
-      </Description>
+      </StyledDescription> */}
+      <ContactSectionWrapper>
+        <GithubIcon onClick={() => window.open('https://github.com/atomyyyy', '_blank')} />
+        <LinkedinIcon onClick={() => window.open('https://www.linkedin.com/in/alan-t-yuen', '_blank')} />
+        <StackOverflowIcon onClick={() => window.open('https://stackoverflow.com/users/15791594/atomyyy', '_blank')} />
+      </ContactSectionWrapper>
+      <ContactSectionWrapper>
+        <StyledButton variant={'outlined'}> Contact Me </StyledButton>
+      </ContactSectionWrapper>
     </ContentWrapper>
   </SectionWrapper>
 )
