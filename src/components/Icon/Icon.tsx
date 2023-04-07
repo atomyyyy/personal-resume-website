@@ -10,6 +10,9 @@ const SvgWrapper = styled.svg`
   color: white;
   cursor: pointer;
   padding: 0.5rem;
+  &:hover {
+    color: orange;
+  }
 `;
 
 const Icon: FC<IconProps> = memo(({children, className, svgRef, transform, ...props}) => (

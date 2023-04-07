@@ -9,11 +9,15 @@ import StackOverflowIcon from './Icon/StackOverflowIcon';
 import background from '../images/background.png';
 
 const SectionWrapper = styled.section`
+  height: 100vh;
   width: 100%;
-  background-color: grey;
+  margin-top: -40px; // offset navbar
   display:inline-flex;
   align-items:center;
   justify-content:center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(${background});
 `;
 
 const ContentWrapper = styled.div`
@@ -26,6 +30,9 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   align-items:center;
   justify-content:center;
+  background: black;
+  opacity: 70%;
+  backdrop-filter: blur(10px);
 `
 
 const ContactSectionWrapper = styled.div`
@@ -56,13 +63,13 @@ const StyledButton = styled(Button)`
   }
 `
 
-const About = () => (
-  <SectionWrapper id='about'>
+const FrontPage = () => (
+  <SectionWrapper id='front-page'>
     <ContentWrapper>
       <StyledTitle align={'center'} variant='h4'>
-        <b>About</b>
+        I am <b>Alan Yuen</b>.
       </StyledTitle>
-      {/* <StyledDescription align={'center'} paragraph={true}>
+      <StyledDescription align={'center'} paragraph={true}>
         I am a Hong Kong based <b>Backend Software Engineer</b>, <b>DevOps</b> and <b>Data Engineer</b>.
         Currently I am working in Accenture Technology helping to build highly available systems with mordern architecture.
       </StyledDescription>
@@ -73,9 +80,9 @@ const About = () => (
       </ContactSectionWrapper>
       <ContactSectionWrapper>
         <StyledButton variant={'outlined'}> Contact Me </StyledButton>
-      </ContactSectionWrapper> */}
+      </ContactSectionWrapper>
     </ContentWrapper>
   </SectionWrapper>
 )
 
-export default About;
+export default FrontPage;

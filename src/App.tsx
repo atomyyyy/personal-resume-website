@@ -6,6 +6,7 @@ import {
 } from '@mui/material/styles';
 
 import NavBar from './components/NavBar';
+import FrontPage from './components/FrontPage';
 import About from './components/About';
 import './App.css';
 
@@ -22,6 +23,7 @@ const App = () => (
   <>
     <ThemeProvider theme={responsiveTheme}>
       <NavBar />
+      <FrontPage />
       <About />
     </ThemeProvider>
   </>
