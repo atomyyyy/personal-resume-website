@@ -69,7 +69,7 @@ const FrontPage = () => (
       <StyledTitle align={'center'} variant='h4'>
         I am <b>Alan Yuen</b>.
       </StyledTitle>
-      <StyledDescription align={'center'} paragraph={true}>
+      <StyledDescription align={'center'} variant={'body2'}>
         I am a Hong Kong based <b>Backend Software Engineer</b>, <b>DevOps</b> and <b>Data Engineer</b>.
         Currently I am working in Accenture Technology helping to build highly available systems with mordern architecture.
       </StyledDescription>
@@ -79,7 +79,10 @@ const FrontPage = () => (
         <StackOverflowIcon onClick={() => window.open('https://stackoverflow.com/users/15791594/atomyyy', '_blank')} />
       </ContactSectionWrapper>
       <ContactSectionWrapper>
-        <StyledButton variant={'outlined'}> Contact Me </StyledButton>
+        <StyledButton
+          variant={'outlined'}
+          onClick={() => window.location.assign('/#contact')}
+        > Contact Me </StyledButton>
       </ContactSectionWrapper>
     </ContentWrapper>
   </SectionWrapper>

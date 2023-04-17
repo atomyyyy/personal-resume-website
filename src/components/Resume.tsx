@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
+import ProgressBar from './ProgressBar';
+
 const SectionWrapper = styled.section`
   width: 100%;
-  background-color: #333131;
+  background-color: white;
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -13,7 +15,7 @@ const SectionWrapper = styled.section`
 
 const StyledGridContainer = styled(Grid)`
   width: 100%;
-  color: white;
+  color: black;
   max-width: calc(60%, 220px);
   min-width: 220px;
   max-width: 700px;
@@ -28,44 +30,47 @@ const StyledTitle = styled(Typography)`
 
 const StyledDescription = styled(Typography)`
   line-height: 1.6;
-  padding: 5px;
 `
 
-const About = () => (
-  <SectionWrapper id='about'>
-    <StyledGridContainer container spacing={2}>
+const Resume = () => (
+  <SectionWrapper id='resume'>
+    <StyledGridContainer container justifyContent='space-between' spacing={2}>
       <Grid item xs={12}>
         <StyledTitle align={'center'} variant='h4'>
-          <b>About Me</b>
+          <b>Education</b>
         </StyledTitle>
       </Grid>
+      <Grid item xs={12} md={8}>
+        Chinese University of Hong Kong
+      </Grid>
+      <Grid item xs={12} md={4}>
+        Sept 2013 - Nov 2018
+      </Grid>
       <Grid item xs={12}>
-        <StyledDescription align={'center'} variant='body2'>
-          I am a passionate software engineer from Hong Kong with finance background. I have &gt;5 years experience in the IT industry, 
-          including working in startup company and system integration consulting firm. I am capable of building large scale highly available softwares
-          as well as analytic data platforms.
+        <StyledDescription variant={'body2'}>
+          Bachelor of Science, Quantitative Finance
         </StyledDescription>
       </Grid>
       <Grid item xs={12}>
-        <b>Location</b>: Toronto
+        <ProgressBar value={0} />
       </Grid>
       <Grid item xs={12}>
-        <b>Age</b>: 28
+        <ProgressBar value={0.2} />
       </Grid>
       <Grid item xs={12}>
-        <b>Nationality</b>: Hong Kong
+        <ProgressBar value={0.4} />
       </Grid>
       <Grid item xs={12}>
-        <b>Interests</b>: Go (Game), Badminton, Cycling
+        <ProgressBar value={0.6} />
       </Grid>
       <Grid item xs={12}>
-        <b>Study</b>: Chinese University of Hong Kong
+        <ProgressBar value={0.8} />
       </Grid>
       <Grid item xs={12}>
-        <b>Employment</b>: Accenture Technology
+        <ProgressBar value={1} />
       </Grid>
     </StyledGridContainer>
   </SectionWrapper>
 )
 
-export default About;
+export default Resume;
