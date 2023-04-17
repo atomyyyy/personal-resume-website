@@ -55,13 +55,13 @@ const StyledDescription = styled(Typography)`
   padding: 5px;
 `
 
-const StyledButton = styled(Button)`
-  border-radius: 60%;
-  &:hover {
-    background: orange;
-    font-weight: 900;
-  }
-`
+// const StyledButton = styled(Button)`
+//   border-radius: 60%;
+//   &:hover {
+//     background: orange;
+//     font-weight: 900;
+//   }
+// `
 
 const FrontPage = () => (
   <SectionWrapper id='front-page'>
