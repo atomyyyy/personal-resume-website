@@ -78,12 +78,6 @@ const FrontPage = () => (
         <LinkedinIcon onClick={() => window.open('https://www.linkedin.com/in/alan-t-yuen', '_blank')} />
         <StackOverflowIcon onClick={() => window.open('https://stackoverflow.com/users/15791594/atomyyy', '_blank')} />
       </ContactSectionWrapper>
-      <ContactSectionWrapper>
-        <StyledButton
-          variant={'outlined'}
-          onClick={() => window.location.assign('/#contact')}
-        > Contact Me </StyledButton>
-      </ContactSectionWrapper>
     </ContentWrapper>
   </SectionWrapper>
 )

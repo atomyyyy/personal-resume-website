@@ -3,7 +3,12 @@ import styled from 'styled-components';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
+// component
+import Education from './Education';
 import ProgressBar from './ProgressBar';
+
+// data
+import EducationData from '../data/EducationData';
 
 const SectionWrapper = styled.section`
   width: 100%;
@@ -28,46 +33,153 @@ const StyledTitle = styled(Typography)`
   text-decoration-color: #E7D1FF;
 `
 
-const StyledDescription = styled(Typography)`
-  line-height: 1.6;
-`
-
 const Resume = () => (
   <SectionWrapper id='resume'>
-    <StyledGridContainer container justifyContent='space-between' spacing={2}>
+    <StyledGridContainer container justifyContent='space-between' spacing={1}>
       <Grid item xs={12}>
         <StyledTitle align={'center'} variant='h4'>
           <b>Education</b>
         </StyledTitle>
       </Grid>
-      <Grid item xs={12} md={8}>
-        Chinese University of Hong Kong
-      </Grid>
-      <Grid item xs={12} md={4}>
-        Sept 2013 - Nov 2018
-      </Grid>
+      {
+        EducationData.map((data, ix) => (
+          <Grid item xs={12} key={`${data.name}-education-${ix}`}>
+            <Education {...data} />
+          </Grid>
+        ))
+      }
       <Grid item xs={12}>
-        <StyledDescription variant={'body2'}>
-          Bachelor of Science, Quantitative Finance
-        </StyledDescription>
+        <StyledTitle align={'center'} variant='h4'>
+          <b>Skills</b>
+        </StyledTitle>
       </Grid>
-      <Grid item xs={12}>
-        <ProgressBar value={0} />
+      {/* Backend */}
+      <Grid container item xs={12} md={6}>
+        <Grid item xs={12} md={12}>
+          <StyledTitle align={'center'} variant='h5'>
+            Backend
+          </StyledTitle>
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> NodeJS (Express / Koa) </Typography>
+          <ProgressBar color='purple' value={1} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Python (Django) </Typography>
+          <ProgressBar color='purple' value={1} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> OpenId Connect </Typography>
+          <ProgressBar color='purple' value={0.95} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Nginx </Typography>
+          <ProgressBar color='purple' value={0.9} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Redis </Typography>
+          <ProgressBar color='purple' value={0.85} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> MongoDB </Typography>
+          <ProgressBar color='purple' value={0.85} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> PostgresDB </Typography>
+          <ProgressBar color='purple' value={0.8} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Java (SpringBoot) </Typography>
+          <ProgressBar color='purple' value={0.7} />
+        </Grid>
       </Grid>
-      <Grid item xs={12}>
-        <ProgressBar value={0.2} />
+      {/* DevOps */}
+      <Grid container item xs={12} md={6}>
+        <Grid item xs={12} md={12}>
+          <StyledTitle align={'center'} variant='h5'>
+            DevOps
+          </StyledTitle>
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Docker </Typography>
+          <ProgressBar color='red' value={1} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Docker Compose </Typography>
+          <ProgressBar color='red' value={1} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> AWS </Typography>
+          <ProgressBar color='red' value={0.8} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Circle CI </Typography>
+          <ProgressBar color='red' value={0.75} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Azure </Typography>
+          <ProgressBar color='red' value={0.7} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> OpenShift (Kubernete) </Typography>
+          <ProgressBar color='red' value={0.65} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Jenkins </Typography>
+          <ProgressBar color='red' value={0.65} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Travis CI </Typography>
+          <ProgressBar color='red' value={0.4} />
+        </Grid>
       </Grid>
-      <Grid item xs={12}>
-        <ProgressBar value={0.4} />
+      {/* Data */}
+      <Grid container item xs={12} md={6}>
+        <Grid item xs={12} md={12}>
+          <StyledTitle align={'center'} variant='h5'>
+            Data
+          </StyledTitle>
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Apache Spark </Typography>
+          <ProgressBar color='orange' value={1} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Azure DataBricks </Typography>
+          <ProgressBar color='orange' value={0.9} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Machine Learning </Typography>
+          <ProgressBar color='orange' value={0.75} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Scala </Typography>
+          <ProgressBar color='orange' value={0.4} />
+        </Grid>
       </Grid>
-      <Grid item xs={12}>
-        <ProgressBar value={0.6} />
-      </Grid>
-      <Grid item xs={12}>
-        <ProgressBar value={0.8} />
-      </Grid>
-      <Grid item xs={12}>
-        <ProgressBar value={1} />
+      {/* Frontend */}
+      <Grid container item xs={12} md={6}>
+        <Grid item xs={12} md={12}>
+          <StyledTitle align={'center'} variant='h5'>
+            Frontend
+          </StyledTitle>
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> React </Typography>
+          <ProgressBar value={0.8} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> GatsbyJS </Typography>
+          <ProgressBar value={0.5} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> NextJS </Typography>
+          <ProgressBar value={0.4} />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Typography variant='overline'> Php </Typography>
+          <ProgressBar value={0.3} />
+        </Grid>
       </Grid>
     </StyledGridContainer>
   </SectionWrapper>

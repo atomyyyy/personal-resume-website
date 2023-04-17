@@ -9,8 +9,6 @@ import NavBar from './components/NavBar';
 import FrontPage from './components/FrontPage';
 import About from './components/About';
 import Resume from './components/Resume';
-import Contact from './components/Contact';
-import './App.css';
 
 const theme = createTheme({
   palette: {
@@ -33,7 +31,6 @@ const App = () => (
       <FrontPage />
       <About />
       <Resume />
-      <Contact />
     </ThemeProvider>
   </>
 )

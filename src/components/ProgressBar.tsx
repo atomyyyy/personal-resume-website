@@ -11,13 +11,17 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   },
   [`& .${linearProgressClasses.bar}`]: {
     borderRadius: 5,
-    backgroundColor: theme.palette.mode === 'light' ? '#1a90ff' : '#308fe8',
   },
 }));
 
-const ProgressBar = (prop: { value: number }) => (
+const ProgressBar = (prop: { value: number, color?: string }) => (
   <Box sx={{ flexGrow: 1 }}>
-    <BorderLinearProgress variant="determinate" value={prop.value*100} />
+    <BorderLinearProgress variant='determinate' value={prop.value*100} sx={{ 
+      [`& .${linearProgressClasses.bar}`]: {
+        borderRadius: 5,
+        backgroundColor: (prop.color ?? '#1a90ff'),
+      },
+     }} />
   </Box>
 )
 
