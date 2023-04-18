@@ -16,7 +16,7 @@ const StyledGrid = styled(Grid)`
 
 const Period = (props: PeriodProps) => (
   <StyledGrid container justifyContent='space-between'>
-    <Grid item>
+    <Grid item sx={{minWidth: '63px', textAlign: 'left'}}>
       <Typography variant={'body2'}>
         {props.startDate?.toLocaleDateString('en-US', {
           year: 'numeric',
@@ -29,12 +29,12 @@ const Period = (props: PeriodProps) => (
         {'—'}
       </Typography>
     </Grid>
-    <Grid item>
+    <Grid item sx={{minWidth: '63px', textAlign: 'left'}}>
       <Typography variant={'body2'}>
         {props.endDate?.toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'short'
-        }) || 'Current'}
+        }) || 'Now'}
       </Typography>
     </Grid>
   </StyledGrid>

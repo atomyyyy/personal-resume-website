@@ -4,14 +4,14 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
 // component
-import EducationRecord from './ResumeRecord';
+import ExeperienceRecord from './ResumeRecord';
 
 // data
-import EducationData from '../data/EducationData';
+import ExperienceData from '../data/ExperienceData';
 
 const SectionWrapper = styled.section`
   width: 100%;
-  background-color: white;
+  background-color: black;
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -19,7 +19,7 @@ const SectionWrapper = styled.section`
 
 const StyledGridContainer = styled(Grid)`
   width: 100%;
-  color: black;
+  color: white;
   max-width: calc(60%, 220px);
   min-width: 220px;
   max-width: 700px;
@@ -33,17 +33,17 @@ const StyledTitle = styled(Typography)`
 `
 
 const Education = () => (
-  <SectionWrapper id='education'>
+  <SectionWrapper id='experience'>
     <StyledGridContainer container justifyContent='space-between' spacing={1}>
       <Grid item xs={12}>
         <StyledTitle align={'center'} variant='h4'>
-          <b>Education</b>
+          <b>Experience</b>
         </StyledTitle>
       </Grid>
       {
-        EducationData.map((data, ix) => (
-          <Grid item xs={12} key={`${data.name}-education-${ix}`}>
-            <EducationRecord {...data} />
+        ExperienceData.map((data, ix) => (
+          <Grid item xs={12} key={`${data.name}-experience-${ix}`}>
+            <ExeperienceRecord {...data} />
           </Grid>
         ))
       }

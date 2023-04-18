@@ -47,7 +47,7 @@ const About = () => (
         </StyledDescription>
       </Grid>
       <Grid item xs={12}>
-        <b>Location</b>: Toronto
+        <b>Location</b>: Toronto, Canada
       </Grid>
       <Grid item xs={12}>
         <b>Age</b>: 28
@@ -60,6 +60,9 @@ const About = () => (
       </Grid>
       <Grid item xs={12}>
         <b>Study</b>: Chinese University of Hong Kong
+      </Grid>
+      <Grid item xs={12}>
+        <b>Language</b>: Cantonese, English (Fluent)
       </Grid>
       <Grid item xs={12}>
         <b>Employment</b>: Accenture Technology
