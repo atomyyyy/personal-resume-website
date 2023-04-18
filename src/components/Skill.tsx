@@ -33,13 +33,21 @@ const StyledTitle = styled(Typography)`
   text-decoration-color: #E7D1FF;
 `
 
-const Resume = () => (
-  <SectionWrapper id='skills'>
+const Skill = () => (
+  <SectionWrapper id='skill'>
     <StyledGridContainer container justifyContent='space-between' spacing={3}>
       <Grid item xs={12}>
         <StyledTitle align={'center'} variant='h4'>
-          <b>Skills</b>
+          <b>Skill</b>
         </StyledTitle>
+      </Grid>
+      <Grid item xs={12}>
+        <Typography paragraph={true}>
+        In my career, I have developed expertise in a variety of areas, including backend development,
+         frontend development, data engineering, and DevOps. I believe that my skills and experience in
+         these areas make me a well-rounded software engineer who can contribute to projects at various 
+         stages of the development lifecycle.
+        </Typography>
       </Grid>
       {
         SkillData.map((data, ix) => (
@@ -64,4 +72,4 @@ const Resume = () => (
   </SectionWrapper>
 )
 
-export default Resume;
+export default Skill;

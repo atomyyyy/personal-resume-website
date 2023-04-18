@@ -41,9 +41,14 @@ const About = () => (
       </Grid>
       <Grid item xs={12}>
         <StyledDescription align={'center'} variant='body2'>
-          I am a passionate software engineer from Hong Kong with finance background. I have &gt;5 years experience in the IT industry, 
-          including working in startup company and system integration consulting firm. I am capable of building large scale highly available softwares
-          as well as analytic data platforms.
+          I am a passionate software engineer from Hong Kong with finance background. In my free time, 
+          I enjoy staying up-to-date with the latest trends and advancements in software engineering, and 
+          I am always looking for ways to improve my skills and knowledge.
+          <br /><br />
+          Outside of work, I am an avid cyclist and enjoy exploring new routes and challenging myself with
+          long-distance rides. I also enjoy playing Go, a strategic board game that requires both analytical
+          thinking and intuition. I find that these physical and mental activities help me stay balanced and 
+          energized, and allow me to approach my work with fresh ideas and perspectives.
         </StyledDescription>
       </Grid>
       <Grid item xs={12}>

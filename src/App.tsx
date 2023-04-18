@@ -46,7 +46,7 @@ const App = () => {
       { name: 'About', id: 'about', display: true, height: aboutRef?.current?.clientHeight },
       { name: 'Education', id: 'education', display: true, height: educationRef?.current?.clientHeight },
       { name: 'Experience', id: 'experience', display: true, height: experienceRef?.current?.clientHeight },
-      { name: 'Skills', id: 'skills', display: true, height: skillRef?.current?.clientHeight },
+      { name: 'Skill', id: 'skill', display: true, height: skillRef?.current?.clientHeight },
     ]);
   }, [
     frontPageRef?.current?.clientHeight,

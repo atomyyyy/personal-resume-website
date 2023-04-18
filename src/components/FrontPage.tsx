@@ -62,9 +62,10 @@ const FrontPage = () => (
         I am <b>Alan Yuen</b>.
       </StyledTitle>
       <StyledDescription align={'center'} variant={'body2'}>
-        I am a Toronto based <b>Backend Software Engineer</b>, <b>DevOps</b> and <b>Data Engineer</b>.
-        Currently I am working in Accenture Technology helping to build highly available systems with mordern architecture.
-        Please feel free to reach me out for a chat in following platforms!
+        I am a Toronto-based <b>Backend Software Engineer</b>, <b>DevOps</b> and <b>Data Engineer</b>.
+        With {`>5`} years of experience in the field, I have developed expertise in building highly available 
+        software with modern architecture. My passion lies in leveraging technology to solve complex business 
+        problems and deliver innovative solutions. Please feel free to reach me for a chat in following platforms!
       </StyledDescription>
       <ContactSectionWrapper>
         <GithubIcon onClick={() => window.open('https://github.com/atomyyyy', '_blank')} />
