@@ -57,7 +57,7 @@ jobs:
       - name: Checkout Default Branch
         uses: actions/checkout@v4
         with:
-          repository: atomyyyy.github.io
+          repository: atomyyyy/atomyyyy.github.io
           ref: gh-pages
       - name: Download a single artifact
         uses: actions/download-artifact@v4
