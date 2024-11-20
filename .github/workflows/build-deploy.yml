@@ -68,9 +68,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: personal-website-artifact
-          path: resume
+          path: atomyyyy.github.io
       - name: Push Change
         run: |
+          cd atomyyyy.github.io
           git add --all
           git commit -m "chore: update personal page"
           git push origin gh-pages
