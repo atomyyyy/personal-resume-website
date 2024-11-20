@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -31,7 +31,45 @@ jobs:
         run: yarn
       - name: Build
         run: yarn build
+      - name: Archive Latest Calendar
+        uses: actions/upload-artifact@v4
+        with:
+          name: personal-website-artifact
+          path: |
+            build
+  deploy-s3:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: personal-website-artifact
+          path: build
       - name: Deploy
         run: aws s3 sync ./build s3://${{ secrets.S3_BUCKET_NAME }}
       - name: Invalidate Cloudfront Cache
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CF_DISTRUBUTION_ID }} --paths "/*"
+  deploy-github-page:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Default Branch
+        uses: actions/checkout@v4
+        with:
+          repository: atomyyyy.github.io
+          ref: gh-pages
+      - name: Download a single artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: personal-website-artifact
+          path: .
+      - name: Configure Git
+        run: |
+          git config --global user.email ${{ secrets.EMAIL }}
+          git config --global user.name ${{ secrets.USERNAME }}
+      - name: Push Change
+        run: |
+          git add *
+          git commit -m "chore: update personal page"
+          git push origin gh-pages
