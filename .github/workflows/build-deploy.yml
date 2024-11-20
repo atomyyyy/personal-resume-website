@@ -61,7 +61,8 @@ jobs:
       - name: Clone Repo
         run: |
           git clone https://atomyyyy:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/atomyyyy/atomyyyy.github.io.git
-          ref: gh-pages
+          git fetch origin gh-pages
+          git checkout -b gh-pages
       - name: Download a single artifact
         uses: actions/download-artifact@v4
         with:
